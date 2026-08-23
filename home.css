@@ -1,0 +1,696 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background-color: #f5eee8;
+    color: #503c32;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================================
+   KOLORY
+========================================= */
+
+:root {
+    --background: #f5eee8;
+    --background-dark: #ebe0d5;
+    --card: #f1e7de;
+    --brown: #503c32;
+    --brown-light: #927964;
+    --brown-button: #a9917d;
+    --line: #b49a83;
+    --white: #ffffff;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+    width: 100%;
+    padding: 28px 4vw 10px;
+    background-color: var(--background);
+}
+
+.header-container {
+    max-width: 1240px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+
+/* =========================================
+   NAWIGACJA
+========================================= */
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 65px;
+
+    /* delikatne przesunięcie względem logo */
+    margin-top: -35px;
+}
+
+.navigation a {
+    position: relative;
+
+    font-size: 22px;
+    font-weight: 400;
+
+    color: #58463c;
+
+    padding: 8px 0;
+
+    transition:
+        color 0.25s ease,
+        text-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+/* delikatna poświata napisu */
+
+.navigation a:hover {
+    color: #8f7561;
+
+    text-shadow:
+        0 3px 8px rgba(80, 60, 50, 0.18);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   AKTYWNA ZAKŁADKA
+========================================= */
+
+.navigation a.active {
+    color: #503c32;
+
+    text-shadow:
+        0 3px 7px rgba(80, 60, 50, 0.26);
+}
+
+.navigation a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 2px;
+
+    border-radius: 10px;
+
+    background-color: #9b816c;
+
+    box-shadow:
+        0 5px 7px rgba(80, 60, 50, 0.25);
+}
+
+
+/* =========================================
+   PRZYCISK ZAPISZ SIĘ
+========================================= */
+
+.navigation .nav-button {
+    padding: 9px 17px;
+
+    border-radius: 8px;
+
+    background-color: var(--brown-button);
+    color: #fff;
+
+    font-size: 22px;
+
+    box-shadow:
+        0 4px 10px rgba(80, 60, 50, 0.16);
+
+    transition:
+        background-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.navigation .nav-button:hover {
+    background-color: #806a58;
+    color: #fff;
+
+    box-shadow:
+        0 6px 14px rgba(80, 60, 50, 0.22);
+
+    transform: translateY(-1px);
+}
+
+/* =========================================
+   HOME
+========================================= */
+
+.home-section {
+    padding: 0px 4vw 58px;
+}
+
+.home-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 315px 1fr;
+    gap: 25px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================
+   ZDJĘCIE
+========================================= */
+
+.home-image {
+    width: 100%;
+    height: 450px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(14, 12, 11, 0.3);
+    border-radius: 11px;
+
+    box-shadow: 0 16px 25px rgba(65, 45, 35, 0.15);
+}
+
+.home-image img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/* =========================================
+   KARTA Z TEKSTEM
+========================================= */
+
+.home-content {
+    position: relative;
+
+    min-height: 450px;
+
+    padding: 27px 20px 24px;
+
+    background-color: #f1e7de;
+    background-image: url("../images/honeycomb.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: auto 100%;
+
+    border: 1px solid rgba(110, 88, 73, 0.2);
+    border-radius: 11px;
+
+    box-shadow: 0 16px 25px rgba(65, 45, 35, 0.15);
+
+    overflow: hidden;
+}
+
+/* =========================================
+   LABEL
+========================================= */
+
+.content-label {
+    font-size: 17px;
+
+    margin-left: 29px;
+
+    color: #634b3d;
+}
+
+
+/* =========================================
+   LINIA
+========================================= */
+
+.content-line {
+    width: 185px;
+    height: 1px;
+
+    margin-top: 16px;
+    margin-bottom: 14px;
+    margin-left: 5px;
+
+    background-color: #927764;
+}
+
+
+/* =========================================
+   H1
+========================================= */
+
+.home-content h1 {
+    margin-bottom: 10px;
+
+    font-size: clamp(42px, 5vw, 59px);
+    font-weight: 400;
+
+    letter-spacing: -2px;
+    line-height: 0.95;
+
+    color: #49362d;
+}
+
+
+/* =========================================
+   TEKST
+========================================= */
+
+.home-content p {
+    max-width: 650px;
+
+    margin-bottom: 6px;
+
+    font-size: 15px;
+    line-height: 1.25;
+
+    color: #584238;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    background-color: #eee3d8;
+
+    background-image: url("../images/footer-bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    color: #503c32;
+}
+
+
+/* =========================================
+   GŁÓWNY KONTENER FOOTERA
+========================================= */
+
+.footer-container {
+    width: 100%;
+    max-width: 1400px;
+
+    min-height: 125px;
+
+    margin: 0 auto;
+
+    padding: 16px 24px 14px;
+
+    display: grid;
+
+    /*
+       1. Nawigacja
+       2. Informacje
+       3. Ozdobna przerwa
+       4. Kontakt
+       5. Social media
+    */
+
+    grid-template-columns:
+        1.3fr
+        1.3fr
+        2.6fr
+        1.4fr
+        0.6fr;
+
+    align-items: stretch;
+}
+
+
+/* =========================================
+   KOLUMNY
+========================================= */
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+/* =========================================
+   NAGŁÓWKI
+========================================= */
+
+.footer-column h3 {
+    margin: 0 0 8px;
+
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+
+    color: #503c32;
+}
+
+
+/* =========================================
+   LINKI
+========================================= */
+
+.footer-column a {
+    margin-bottom: 6px;
+
+    font-size: 13px;
+
+    color: #584238;
+
+    text-decoration: underline;
+
+    transition:
+        color 0.2s ease,
+        text-shadow 0.2s ease;
+}
+
+.footer-column a:hover {
+    color: #8f7561;
+
+    text-shadow:
+        0 2px 6px rgba(80, 60, 50, 0.18);
+}
+
+
+/* =========================================
+   3. OZDOBNA PRZERWA
+========================================= */
+
+.footer-decoration {
+    position: relative;
+
+    height: 100%;
+    min-height: 95px;
+
+    margin: 0 40px;
+
+    border-left: 2px solid rgba(120, 94, 76, 0.45);
+    border-right: 2px solid rgba(120, 94, 76, 0.45);
+
+  
+}
+
+
+/* =========================================
+   4. KONTAKT
+========================================= */
+
+.footer-contact {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding-left: 20px;
+}
+
+
+/* =========================================
+   ELEMENT KONTAKTOWY
+========================================= */
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+
+    margin-bottom: 6px;
+
+    font-size: 13px;
+    line-height: 1.25;
+
+    color: #584238;
+}
+
+
+/* =========================================
+   IKONY KONTAKTOWE
+========================================= */
+
+.contact-icon {
+    width: 25px;
+    min-width: 25px;
+
+    margin-right: 7px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+
+    color: #8f7561;
+}
+
+
+/* =========================================
+   5. SOCIAL MEDIA
+========================================= */
+
+.socials {
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 16px;
+
+    height: 100%;
+
+    min-height: 95px;
+}
+
+
+.socials a {
+    width: 24px;
+    height: 24px;
+
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+.socials a:hover {
+    transform: translateX(2px);
+
+    opacity: 0.7;
+}
+
+
+.socials img {
+    width: 20px;
+    height: 20px;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+/* =========================================
+   COPYRIGHT
+========================================= */
+
+.copyright {
+    min-height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 6px 20px;
+
+    background-color: #c5b09c;
+
+    color: #fff;
+
+    text-align: center;
+
+    font-size: 10px;
+}
+
+
+/* =========================================
+   RESPONSYWNOŚĆ — TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .header-container {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .navigation {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .home-container {
+        grid-template-columns: 1fr;
+    }
+
+    .home-image {
+        height: 420px;
+    }
+
+    .home-content {
+        min-height: auto;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 30px;
+    }
+
+    .footer-decoration {
+        border-right: none;
+    }
+}
+
+
+/* =========================================
+   RESPONSYWNOŚĆ — TELEFON
+========================================= */
+
+@media (max-width: 600px) {
+
+    .header {
+        padding: 20px 20px;
+    }
+
+    .logo-main {
+        font-size: 22px;
+    }
+
+    .navigation {
+        gap: 15px;
+    }
+
+    .navigation a {
+        font-size: 14px;
+    }
+
+    .navigation .nav-button {
+        font-size: 14px;
+    }
+
+    .home-section {
+        padding: 20px 15px 40px;
+    }
+
+    .home-image {
+        height: 350px;
+    }
+
+    .home-content {
+        padding: 24px 18px;
+    }
+
+    .content-label {
+        margin-left: 0;
+    }
+
+    .content-line {
+        margin-left: 0;
+    }
+
+    .home-content h1 {
+        font-size: 42px;
+    }
+
+    .home-content p {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        padding: 25px 20px;
+    }
+
+    .footer-decoration {
+        display: none;
+    }
+
+    .socials {
+        position: static;
+        margin-top: 10px;
+    }
+}
