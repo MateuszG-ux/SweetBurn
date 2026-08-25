@@ -229,7 +229,7 @@ a {
 
 .home-image {
     width: 100%;
-    height: 450px;
+    height: auto;
 
     overflow: hidden;
 
@@ -241,7 +241,7 @@ a {
 
 .home-image img {
     width: 100%;
-    height: 100%;
+    height: auto;
 }
 
 
@@ -587,79 +587,225 @@ a {
 
 /* =========================================
    RESPONSYWNOŚĆ — TABLET
+   iPad / urządzenia do 900px
 ========================================= */
 
 @media (max-width: 900px) {
 
+    /* =========================
+       HEADER
+    ========================== */
+
+    .header {
+        padding: 24px 4vw 15px;
+    }
+
     .header-container {
         flex-direction: column;
-        gap: 25px;
+        gap: 20px;
     }
 
     .navigation {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 20px;
+        gap: 20px 32px;
+        margin-top: 0;
+    }
+
+
+    /* =========================
+       HOME
+    ========================== */
+
+    .home-section {
+        padding: 20px 4vw 50px;
     }
 
     .home-container {
         grid-template-columns: 1fr;
+        gap: 25px;
     }
 
+    /*
+       Zdjęcie zachowuje naturalne proporcje.
+       Nie przycinamy go i nie rozciągamy.
+    */
+
     .home-image {
-        height: 420px;
+        width: 100%;
+        height: auto;
+    }
+
+    .home-image img {
+        width: 100%;
+        height: auto;
     }
 
     .home-content {
         min-height: auto;
     }
 
+
+    /* =========================
+       FOOTER — TABLET
+    ========================== */
+
+    .footer {
+        background-image: url("../images/footer-bg-tablet.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
     .footer-container {
-        grid-template-columns: 1fr 1fr;
-        row-gap: 30px;
+        width: 100%;
+        max-width: 900px;
+
+        padding: 25px 5vw 20px;
+
+        display: grid;
+
+        grid-template-columns:
+            1fr
+            1fr
+            1.4fr
+            1.4fr;
+
+        grid-template-areas:
+            "navigation information"
+            "decoration decoration"
+            "contact socials";
+
+        column-gap: 30px;
+        row-gap: 20px;
+
+        min-height: auto;
+    }
+
+
+    /* =========================
+       OBSZARY FOOTERA
+    ========================== */
+
+    .footer-navigation {
+        grid-area: navigation;
+    }
+
+    .footer-information {
+        grid-area: information;
     }
 
     .footer-decoration {
-        border-right: none;
+        grid-area: decoration;
+
+        width: 100%;
+        height: 70px;
+
+        min-height: 70px;
+
+        margin: 0;
+
+        border-left: 2px solid rgba(120, 94, 76, 0.45);
+        border-right: 2px solid rgba(120, 94, 76, 0.45);
+    }
+
+    .footer-contact {
+        grid-area: contact;
+
+        padding-left: 0;
+    }
+
+    .socials {
+        grid-area: socials;
+
+        min-height: 70px;
+        height: 70px;
+
+        justify-content: center;
+        align-items: center;
     }
 }
 
 
 /* =========================================
    RESPONSYWNOŚĆ — TELEFON
+   do 600px
 ========================================= */
 
 @media (max-width: 600px) {
 
+    /* =========================
+       HEADER
+    ========================== */
+
     .header {
-        padding: 20px 20px;
+        padding: 20px 15px 15px;
     }
 
-    .logo-main {
-        font-size: 22px;
+    .header-container {
+        gap: 18px;
+    }
+
+    .logo {
+        width: min(220px, 75vw);
     }
 
     .navigation {
-        gap: 15px;
+        width: 100%;
+
+        display: flex;
+        flex-wrap: wrap;
+
+        justify-content: center;
+        align-items: center;
+
+        gap: 10px 18px;
+
+        margin-top: 0;
     }
 
     .navigation a {
         font-size: 14px;
+        padding: 5px 0;
     }
 
     .navigation .nav-button {
+        padding: 8px 13px;
         font-size: 14px;
     }
 
+
+    /* =========================
+       HOME
+    ========================== */
+
     .home-section {
-        padding: 20px 15px 40px;
+        padding: 15px 15px 40px;
     }
 
+    .home-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /*
+       Zdjęcie zawsze zachowuje proporcje.
+       Niczego nie przycinamy.
+    */
+
     .home-image {
-        height: 350px;
+        width: 100%;
+        height: auto;
+    }
+
+    .home-image img {
+        width: 100%;
+        height: auto;
     }
 
     .home-content {
+        min-height: auto;
+
         padding: 24px 18px;
     }
 
@@ -672,7 +818,7 @@ a {
     }
 
     .home-content h1 {
-        font-size: 42px;
+        font-size: clamp(38px, 12vw, 48px);
     }
 
     .home-content p {
@@ -680,17 +826,142 @@ a {
         line-height: 1.4;
     }
 
-    .footer-container {
-        grid-template-columns: 1fr;
-        padding: 25px 20px;
+
+    /* =========================
+       FOOTER — MOBILE
+    ========================== */
+
+    .footer {
+        background-image: url("../images/footer-bg-mobile.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
     }
+
+
+    /* =========================
+       GŁÓWNY UKŁAD
+    ========================== */
+
+    .footer-container {
+        width: 100%;
+        max-width: 100%;
+
+        padding: 30px 25px 22px;
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        grid-template-areas:
+            "navigation information"
+            "contact contact"
+            "socials socials";
+
+        column-gap: 25px;
+        row-gap: 25px;
+
+        min-height: auto;
+    }
+
+
+    /* =========================
+       NAWIGACJA
+    ========================== */
+
+    .footer-navigation {
+        grid-area: navigation;
+    }
+
+
+    /* =========================
+       INFORMACJE
+    ========================== */
+
+    .footer-information {
+        grid-area: information;
+    }
+
+
+    /* =========================
+       KONTAKT
+    ========================== */
+
+    .footer-contact {
+        grid-area: contact;
+
+        padding-left: 0;
+    }
+
+
+    /* =========================
+       OZDOBNA GRAFIKA / LINIE
+    ========================== */
 
     .footer-decoration {
         display: none;
     }
 
+
+    /* =========================
+       SOCIAL MEDIA
+    ========================== */
+
     .socials {
-        position: static;
-        margin-top: 10px;
+        grid-area: socials;
+
+        width: 100%;
+
+        min-height: auto;
+        height: auto;
+
+        margin-top: 0;
+
+        display: flex;
+        flex-direction: row;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: 22px;
+    }
+
+
+    /* =========================
+       ELEMENTY FOOTERA
+    ========================== */
+
+    .footer-column h3 {
+        margin-bottom: 10px;
+        font-size: 13px;
+    }
+
+    .footer-column a {
+        margin-bottom: 7px;
+        font-size: 13px;
+    }
+
+    .contact-item {
+        margin-bottom: 8px;
+        font-size: 13px;
+    }
+
+    .contact-icon {
+        width: 25px;
+        min-width: 25px;
+    }
+
+
+    /* =========================
+       COPYRIGHT
+    ========================== */
+
+    .copyright {
+        min-height: 30px;
+
+        padding: 7px 15px;
+
+        font-size: 9px;
+        line-height: 1.3;
     }
 }
