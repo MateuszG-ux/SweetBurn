@@ -900,213 +900,236 @@ a {
 
 
 /* =========================================
-   RESPONSYWNOŚĆ — 1100 PX
+   RESPONSYWNOŚĆ — FOOTER
+========================================= */
+
+
+/* =========================================
+   1100 PX
 ========================================= */
 
 @media (max-width: 1100px) {
 
-    .navigation {
-        gap: 30px;
-    }
+    .footer-container {
+        width: 100%;
+        max-width: 1400px;
 
-    .navigation a {
-        font-size: 18px;
-    }
+        padding: 16px 24px 14px;
 
-    .navigation .nav-button {
-        font-size: 18px;
-    }
-
-    .training-types {
         grid-template-columns:
-            repeat(2, 1fr);
-    }
+            1.3fr
+            1.3fr
+            2.6fr
+            1.4fr
+            0.6fr;
 
-    .price-cards {
-        grid-template-columns:
-            repeat(2, 1fr);
+        align-items: stretch;
     }
 
 }
 
 
 /* =========================================
-   RESPONSYWNOŚĆ — 900 PX
+   900 PX — TABLET
 ========================================= */
 
 @media (max-width: 900px) {
 
-    .header-container {
-        flex-direction: column;
+    .footer {
+        background-image: url("../images/footer-bg-tablet.png");
 
-        gap: 25px;
+        background-repeat: no-repeat;
+
+        background-position: center;
+
+        background-size: cover;
     }
 
-    .navigation {
-        flex-wrap: wrap;
-
-        justify-content: center;
-
-        gap: 20px;
-
-        margin-top: 0;
-    }
-
-    .filters-container {
-        flex-direction: column;
-
-        align-items: flex-start;
-    }
 
     .footer-container {
-        grid-template-columns:
-            1fr 1fr;
-
-        row-gap: 30px;
-    }
-
-    .footer-decoration {
-        border-right: none;
-    }
-
-}
-
-
-/* =========================================
-   RESPONSYWNOŚĆ — 600 PX
-========================================= */
-
-@media (max-width: 600px) {
-
-    .header {
-        padding: 20px;
-    }
-
-    .logo {
-        width: 210px;
-    }
-
-    .navigation {
-        gap: 15px;
-    }
-
-    .navigation a {
-        font-size: 14px;
-    }
-
-    .navigation .nav-button {
-        font-size: 14px;
-    }
-
-
-    /* INTRO */
-
-    .pricing-intro {
-        padding: 25px 15px 20px;
-    }
-
-    .intro-text {
-        margin-bottom: 30px;
-
-        font-size: 15px;
-    }
-
-
-    /* RODZAJE TRENINGÓW */
-
-    .training-types {
-        grid-template-columns: 1fr;
-
-        gap: 14px;
-    }
-
-    .training-type {
-        min-height: auto;
-
-        padding: 20px;
-    }
-
-
-    /* FILTRY */
-
-    .filters-section {
-        padding: 20px 15px 30px;
-    }
-
-    .filters-container {
-        padding: 18px;
-
-        gap: 15px;
-    }
-
-    .filters {
         width: 100%;
+        max-width: 1024px;
 
-        gap: 8px;
-    }
+        padding: 25px 4vw 20px;
 
-    .filter-button {
-        padding: 8px 14px;
+        display: grid;
 
-        font-size: 13px;
-    }
+        grid-template-columns:
+            1.2fr
+            1.2fr
+            1.5fr
+            0.8fr;
 
+        column-gap: 25px;
 
-    /* CENNIK */
+        row-gap: 0;
 
-    .pricing-section {
-        padding: 0 15px 50px;
-    }
-
-    .pricing-group {
-        margin-bottom: 50px;
-    }
-
-    .pricing-group-heading {
-        margin-bottom: 20px;
-    }
-
-    .pricing-group-heading h2 {
-        font-size: 25px;
-    }
-
-    .price-cards {
-        grid-template-columns: 1fr;
-
-        gap: 20px;
-    }
-
-    .price-image {
-        height: 230px;
-    }
-
-    .price-content {
-        padding: 22px;
-    }
-
-    .price-description {
         min-height: auto;
     }
 
 
-    /* FOOTER */
-
-    .footer-container {
-        grid-template-columns: 1fr;
-
-        padding: 25px 20px;
-    }
+    /* DEKORACJA WYŁĄCZONA */
 
     .footer-decoration {
         display: none;
     }
 
+
+    /* KONTAKT */
+
+    .footer-contact {
+        padding-left: 0;
+    }
+
+
+    /* SOCIAL MEDIA */
+
     .socials {
-        justify-content: flex-start;
+        height: auto;
+
+        min-height: 0;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: 12px;
+    }
+
+}
+
+
+/* =========================================
+   600 PX — TELEFON
+========================================= */
+
+@media (max-width: 600px) {
+
+    .footer {
+        background-image: url("../images/footer-bg-mobile.png");
+
+        background-repeat: no-repeat;
+
+        background-position: center;
+
+        background-size: cover;
+    }
+
+
+    .footer-container {
+        width: 100%;
+        max-width: 100%;
+
+        padding: 30px 25px 22px;
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        grid-template-areas:
+            "navigation information"
+            "contact contact"
+            "socials socials";
+
+        column-gap: 25px;
+
+        row-gap: 25px;
+
+        min-height: auto;
+    }
+
+
+    /* NAWIGACJA */
+
+    .footer-navigation {
+        grid-area: navigation;
+    }
+
+
+    /* INFORMACJE */
+
+    .footer-information {
+        grid-area: information;
+    }
+
+
+    /* KONTAKT */
+
+    .footer-contact {
+        grid-area: contact;
+
+        padding-left: 0;
+    }
+
+
+    /* DEKORACJA WYŁĄCZONA */
+
+    .footer-decoration {
+        display: none;
+    }
+
+
+    /* SOCIAL MEDIA */
+
+    .socials {
+        grid-area: socials;
+
+        width: 100%;
 
         min-height: auto;
 
-        margin-top: 10px;
+        height: auto;
+
+        margin-top: 0;
+
+        display: flex;
+
+        flex-direction: row;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: 22px;
+    }
+
+
+    /* ELEMENTY FOOTERA */
+
+    .footer-column h3 {
+        margin-bottom: 10px;
+
+        font-size: 13px;
+    }
+
+    .footer-column a {
+        margin-bottom: 7px;
+
+        font-size: 13px;
+    }
+
+    .contact-item {
+        margin-bottom: 8px;
+
+        font-size: 13px;
+    }
+
+    .contact-icon {
+        width: 25px;
+        min-width: 25px;
+    }
+
+
+    /* COPYRIGHT */
+
+    .copyright {
+        min-height: 30px;
+
+        padding: 7px 15px;
+
+        font-size: 9px;
+
+        line-height: 1.3;
     }
 
 }
